@@ -24,8 +24,8 @@ copy "default\Gruntfile.js" "%projectdir%Gruntfile.js"
 copy "default\index.html" "%projectdir%app\index.html"
 copy "default\server.js" "%projectdir%app\server.js"
 copy "default\test-page.html" "%projectdir%app\_tests\index.html"
+copy "default\script.js" "%projectdir%app\_scripts\script.js"
 copy NUL "%projectdir%app\_css\styles.less"
-copy NUL "%projectdir%app\_scripts\script.js"
 
 cd "%projectdir%" 
 call npm init --yes
