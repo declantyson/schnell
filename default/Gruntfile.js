@@ -31,7 +31,7 @@ module.exports = function(grunt) {
 		},
 		cssmin : {
 			options : {
-				
+
 			},
 			target: {
 				files : [{
@@ -49,7 +49,7 @@ module.exports = function(grunt) {
 			      	'--max-disk-cache-size':100000,
 			      	'--load-images':false,
 			      	'--local-to-remote-url-access':true,
-			      	'--ssl-protocol':'any'		       
+			      	'--ssl-protocol':'any'
 			},
 			all: {
 				options: {
