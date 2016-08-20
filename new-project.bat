@@ -1,5 +1,5 @@
 @echo off
-set prefix="C:\wamp\www\"
+set prefix="D:\Documents\"
 set /p project="Enter project name: "
 if exist "%prefix%%project%\" (
 	echo %project% already exists.
@@ -25,7 +25,7 @@ copy "default\index.html" "%projectdir%app\index.html"
 copy "default\server.js" "%projectdir%app\server.js"
 copy "default\test-page.html" "%projectdir%app\_tests\index.html"
 copy "default\script.js" "%projectdir%app\_scripts\script.js"
-copy NUL "%projectdir%app\_css\styles.less"
+copy "default\styles.less" "%projectdir%app\_css\styles.less"
 
 cd "%projectdir%" 
 call npm init --yes
