@@ -25,12 +25,12 @@ copy "default\index.html" "%projectdir%app\index.html"
 copy "default\server.js" "%projectdir%app\server.js"
 copy "default\test-page.html" "%projectdir%app\_tests\index.html"
 copy "default\script.js" "%projectdir%app\_scripts\script.js"
-copy "default\styles.less" "%projectdir%app\_css\styles.less"
+copy "default\styles.scss" "%projectdir%app\_css\styles.scss"
 
 cd "%projectdir%" 
 call npm init --yes
 call npm install grunt --save-dev
-call npm install grunt-contrib-less --save-dev
+call npm install grunt-contrib-sass --save-dev
 call npm install grunt-contrib-uglify --save-dev
 call npm install grunt-contrib-cssmin --save-dev
 call npm install grunt-contrib-watch --save-dev
