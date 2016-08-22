@@ -1,7 +1,37 @@
+#!/usr/bin/env bash
 default=~/workspace/schnell/default
 prefix=~/dev/
-echo -n 'Enter project name:'
-read project
+
+if [ $# -lt 1 ]; then
+    echo -n 'Enter project name:'
+    read project
+fi
+while test $# -gt 0; do
+    case "$1" in
+        -h|--help)
+            echo "options:"
+            echo "-h, --help      show brief help"
+            echo "-n, --name      name project"
+            exit 0
+            ;;
+        -n|--name)
+            shift
+            if test $# -gt 0; then
+                export project=$1
+            else
+                echo "no name specified"
+                exit 1
+            fi
+            shift
+            ;;
+        *)
+            break
+            ;;
+    esac
+done
+
+echo "Creating new project '$project'"
+
 projectdir=$prefix$project
 
 mkdir $projectdir
@@ -20,7 +50,7 @@ cp $default/index.html $projectdir/app/index.html
 cp $default/server.js $projectdir/app/server.js
 cp $default/test-spec.js $projectdir/app/_tests/test-spec.js
 cp $default/script.js $projectdir/app/_scripts/script.js
-> $projectdir/app/_css/styles.scss
+cp $default/styles.scss $projectdir/app/_css/styles.scss
 
 cd $projectdir
 npm init --yes
