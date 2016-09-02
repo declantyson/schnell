@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 default=~/workspace/schnell/default
-prefix=~/dev/
+prefix=~/workspace/
 
 if [ $# -lt 1 ]; then
     echo -n 'Enter project name:'
@@ -45,8 +45,8 @@ mkdir $projectdir/app/_tests
 mkdir $projectdir/app/_images
 
 cp $default/rungrunt.sh $projectdir/rungrunt.sh
-cp $default/Gruntfilev2.js $projectdir/Gruntfile.js
-cp $default/index.html $projectdir/app/index.html
+cp $default/Gruntfile.js $projectdir/Gruntfile.js
+cp $default/index.ejs $projectdir/app/index.ejs
 cp $default/server.js $projectdir/app/server.js
 cp $default/test-spec.js $projectdir/app/_tests/test-spec.js
 cp $default/script.js $projectdir/app/_scripts/script.js
@@ -63,9 +63,11 @@ npm install grunt-contrib-connect --save-dev
 npm install grunt-contrib-jasmine --save-dev
 npm install grunt-contrib-jshint --save-dev
 npm install grunt-notify --save-dev
-npm install phantomjs --save-dev
-npm install connect serve-static
 
+npm install body-parser --save-dev
+npm install ejs --save-dev
+npm install express --save-dev
+npm install fs --save-dev
 
 # sudo npm install -g ttab
 bash rungrunt.sh

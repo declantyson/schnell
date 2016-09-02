@@ -42,6 +42,11 @@ html, body {
 	transition: $val;
 }
 
+@mixin boxShadow($val) {
+	-webkit-box-shadow: $val;
+	box-shadow: $val;
+}
+
 @function opposite-direction($directions) {
 	$opposite-directions: ();
 	$direction-map: (

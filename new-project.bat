@@ -34,11 +34,15 @@ call npm install grunt-contrib-sass --save-dev
 call npm install grunt-contrib-uglify --save-dev
 call npm install grunt-contrib-cssmin --save-dev
 call npm install grunt-contrib-watch --save-dev
-call npm install grunt-contrib-qunit --save-dev
+call npm install grunt-contrib-jasmine --save-dev
 call npm install grunt-contrib-connect --save-dev
+call npm install grunt-contrib-jshint --save-dev
 call npm install grunt-notify --save-dev
-call npm install phantomjs --save-dev
-call npm install connect serve-static
+
+call npm install body-parser --save-dev
+call npm install ejs --save-dev
+call npm install express --save-dev
+call npm install fs --save-dev
 
 :: disable the following for speed
 

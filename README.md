@@ -5,6 +5,12 @@ A quick batch file to set up a basic front-end project structure.
 
 ## Changelog
 
+_02/09/16_
+
+- Switched to Express/EJS instead of connect
+- Split Grunt watch tasks to separate SASS and JS
+- Unify Gruntfile.js across platforms
+
 _22/08/16_
 
 - Replaced default LESS file with SASS on Windows.
