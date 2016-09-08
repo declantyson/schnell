@@ -1,5 +1,11 @@
-// Put your body code here
-
+/*
+ *
+ *	PROJECT
+ *	AUTHOR
+ *	v0.0.1
+ *	DATE
+ *
+ */
 
 // Utility functions because JS sucks 
 // and misses some pretty basic functions

@@ -6,20 +6,20 @@ module.exports = function(grunt) {
 				banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
 			},
 			build: {
-				src: ['app/_scripts/*.js', '!**/*.min.js'],
+				src: ['app/_scripts/src/*.js', '!**/*.min.js'],
 				dest: 'app/_scripts/script.min.js'
 			}
 		},
 		watch : {
 			scripts: {
-				files: ['app/_scripts/*.js', '!**/*.min.js'],
+				files: ['app/_scripts/src/*.js', '!**/*.min.js'],
 				tasks: ['jshint', 'jasmine', 'uglify'],
 				options: {
 
 				}
 			},
 			styles : {
-				files: ['app/_css/*.scss'],
+				files: ['app/_css/src/*.scss'],
 				tasks: ['sass', 'cssmin'],
 				options: {
 
@@ -32,7 +32,7 @@ module.exports = function(grunt) {
 
 				},
 				files : {
-					'app/_css/styles.css': 'app/_css/*.scss'
+					'app/_css/styles.css': 'app/_css/src/*.scss'
 				}
 			}
 		},
@@ -53,7 +53,7 @@ module.exports = function(grunt) {
 		jshint: {
 			all: [
 				'Gruntfile.js',
-				'app/_scripts/*.js',
+				'app/_scripts/src/*.js',
 				'app/_tests/*.js',
 				'!app/_scripts/*.min.js'
 			]

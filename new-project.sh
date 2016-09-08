@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 default=~/workspace/schnell/default
-prefix=~/workspace/
+prefix=~/dev-dt/
 
 if [ $# -lt 1 ]; then
     echo -n 'Enter project name:'
@@ -44,13 +44,13 @@ mkdir $projectdir/app/_data
 mkdir $projectdir/app/_tests
 mkdir $projectdir/app/_images
 
-cp $default/rungrunt.sh $projectdir/rungrunt.sh
+cp $default/run.sh $projectdir/run.sh
 cp $default/Gruntfile.js $projectdir/Gruntfile.js
 cp $default/index.ejs $projectdir/app/index.ejs
-cp $default/server.js $projectdir/app/server.js
+cp $default/server.js $projectdir/server.js
 cp $default/test-spec.js $projectdir/app/_tests/test-spec.js
-cp $default/script.js $projectdir/app/_scripts/script.js
-cp $default/styles.scss $projectdir/app/_css/styles.scss
+cp -r $default/_scripts/ $projectdir/app/_scripts/
+cp -r $default/_css/ $projectdir/app/_css/
 
 cd $projectdir
 npm init --yes
@@ -70,5 +70,5 @@ npm install express --save-dev
 npm install fs --save-dev
 
 # sudo npm install -g ttab
-bash rungrunt.sh
+bash run.sh
 cd app

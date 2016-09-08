@@ -5,10 +5,10 @@ var http = require('http'),
     app = express();
 
 
-app.use("/_css", express.static(__dirname + '/_css'));
-app.use("/_data", express.static(__dirname + '/_data'));
-app.use("/_libs", express.static(__dirname + '/_libs'));
-app.use("/_scripts", express.static(__dirname + '/_scripts'));
+app.use("/_css", express.static('app/_css'));
+app.use("/_data", express.static('app/_data'));
+app.use("/_libs", express.static('app/_libs'));
+app.use("/_scripts", express.static('app/_scripts'));
 
 app.get('/', function(req,res) {
     res.writeHead(200, {'Content-Type': 'text/html'});

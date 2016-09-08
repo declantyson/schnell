@@ -5,6 +5,11 @@ A quick batch file to set up a basic front-end project structure.
 
 ## Changelog
 
+_07/09/16_
+
+- Renamed and restructured some files
+- Auto-run grunt sass, cssmin and uglify
+
 _02/09/16_
 
 - Switched to Express/EJS instead of connect

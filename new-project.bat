@@ -22,10 +22,10 @@ mkdir "%projectdir%app\_images\"
 copy "default\sftp-config.json" "%projectdir%sftp-config.json"
 copy "default\Gruntfile.js" "%projectdir%Gruntfile.js"
 copy "default\index.html" "%projectdir%app\index.html"
-copy "default\server.js" "%projectdir%app\server.js"
+copy "default\server.js" "%projectdir%server.js"
 copy "default\test-page.html" "%projectdir%app\_tests\index.html"
-copy "default\script.js" "%projectdir%app\_scripts\script.js"
-copy "default\styles.scss" "%projectdir%app\_css\styles.scss"
+copy "default\_scripts\src\utility.js" "%projectdir%app\_scripts\src\utility.js"
+copy "default\_css\src\base.scss" "%projectdir%app\_css\src\base.scss"
 
 cd "%projectdir%" 
 call npm init --yes
@@ -61,6 +61,6 @@ call git commit -m "Initial commit"
 echo %project% successfully created.
 pause
 %SystemRoot%\explorer.exe "%prefix%%project%\"
-start cmd /k node server.js
+start cmd /k npm start
 start cmd /k grunt
 start cmd /k cd "%projectdir%"
