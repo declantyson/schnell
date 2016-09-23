@@ -25,6 +25,8 @@ while test $# -gt 0; do
             shift
             ;;
         *)
+            echo "Unknown parameter"
+            exit 0
             break
             ;;
     esac
