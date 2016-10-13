@@ -5,6 +5,11 @@ A quick batch file to set up a basic front-end project structure.
 
 ## Changelog
 
+_13/10/16_
+
+- Move installation process to a recipe format
+- Added React recipe
+
 _23/09/16_
 
 - Shell safeguarding

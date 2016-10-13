@@ -36,7 +36,7 @@ done
 echo -n 'Choose recipe:'
 read recipe
 
-if [ ! -d recipes/$recipe ]; then
+if [ ! -d $base$recipe ]; then
     echo "Error: cannot find recipe '$recipe'."
     exit 0
 fi
@@ -51,7 +51,7 @@ projectdir=$prefix$project
 recipedir=$base/$recipe
 
 mkdir $projectdir
-bash recipes/$recipe/install.sh $projectdir $recipedir
+bash $base/$recipe/install.sh $projectdir $recipedir
 
 cd $projectdir
 bash run.sh
