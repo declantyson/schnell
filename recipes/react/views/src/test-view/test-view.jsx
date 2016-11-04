@@ -2,7 +2,7 @@
  *
  *	Test View
  *	v0.0.1
- *	13/10/2016
+ *	04/11/2016
  *  
  */
 
@@ -28,6 +28,10 @@ window.TestView = React.createClass({
         if(this.props.data.length === 0) {
             this.getDataFromEndpoint();
             setInterval(this.getDataFromEndpoint, this.props.pollInterval);
+        }
+        mountedComponents++;
+        if(mountedComponents >= $('.component').length) {
+            renderComplete();
         }
     },
     render: function() {

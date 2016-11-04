@@ -5,6 +5,13 @@ A quick batch file to set up a basic front-end project structure.
 
 ## Changelog
 
+_04/11/16_
+
+- React recipe changes:
+    - Add renderComplete function
+    - Add default pollInterval
+    - Add toggle for fullscreen, defaulting to false
+
 _13/10/16_
 
 - Move installation process to a recipe format
