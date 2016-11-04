@@ -7,7 +7,7 @@
  */ 
 
 var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-var assetFolder = "/renderer/img";
+var assetFolder = "/img";
 var mountedComponents = 0;
 var defaultPollInterval = 5000;
 var scrollIndex = 1;

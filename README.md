@@ -11,6 +11,7 @@ _04/11/16_
     - Add renderComplete function
     - Add default pollInterval
     - Add toggle for fullscreen, defaulting to false
+    - Synchronize renderer and server
 
 _13/10/16_
 
