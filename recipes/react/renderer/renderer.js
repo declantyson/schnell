@@ -45,6 +45,9 @@ function renderViews(views) {
 
 function renderComplete() {
 	document.body.className = "ready";
+	if(fullScreenComponents) {
+		document.body.className += " fullscreencomponents"
+	}
 }
 
 function generateId() {

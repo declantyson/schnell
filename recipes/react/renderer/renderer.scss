@@ -2,7 +2,7 @@
 *
 *	Renderer
 *	v0.0.1
-*	13/10/2016
+*	04/11/2016
 *
 */
 
@@ -42,9 +42,11 @@
 /* Defaults */
 
 html, body {
-	overflow: hidden;
 	margin: 0;
 	font-family: 'HelveticaNeue-Light', sans-serif;
+	&.fullscreencomponents {
+		overflow: hidden;
+	}
 }
 
 body {
