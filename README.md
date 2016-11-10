@@ -5,6 +5,11 @@ A quick batch file to set up a basic front-end project structure.
 
 ## Changelog
 
+_10/11/16_
+
+- Add column layout to default recipes
+- Add 66% width column to react recipe
+
 _04/11/16_
 
 - React recipe changes:

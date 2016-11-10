@@ -21,6 +21,21 @@ html, body {
 	}
 }
 
+.col {
+	float: left;
+	margin-right: 1%;
+	width: 99%;
+	&.col-66 {
+		width: 65%;
+	}
+	&.col-50 {
+		width: 49%;
+	}
+	&.col-33 {
+		width: 32%;
+	}
+}
+
 /* Mixins */
 
 @mixin transform($val) {

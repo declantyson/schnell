@@ -68,6 +68,9 @@ body {
 	float: left;
 	margin-right: 1%;
 	width: 99%;
+	&.col-66 {
+		width: 65%;
+	}
 	&.col-50 {
 		width: 49%;
 	}
