@@ -5,6 +5,10 @@ A quick batch file to set up a basic front-end project structure.
 
 ## Changelog
 
+_06/12/16_
+
+- Add a React Native recipe
+
 _10/11/16_
 
 - Add column layout to default recipes
