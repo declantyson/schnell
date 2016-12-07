@@ -10,4 +10,10 @@ cd $projectdir
 ttab emulator -avd device1
 react-native init app
 cd app
+
+cp $recipedir/index.android.js $projectdir/app/index.android.js
+cp -r $recipedir/js $projectdir/app/js
+
+npm install --save-dev react-native-swiper
+
 react-native run-android

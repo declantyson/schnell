@@ -5,9 +5,10 @@ A quick batch file to set up a basic front-end project structure.
 
 ## Changelog
 
-_06/12/16_
+_07/12/16_
 
 - Add Android launch shell in React Native recipe
+- Add a basic swipe-page app to the React Native recipe
 
 _06/12/16_
 
