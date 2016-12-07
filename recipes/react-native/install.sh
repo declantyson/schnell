@@ -3,6 +3,8 @@
 projectdir=$1
 recipedir=$2
 
+cp $recipedir/android.sh $projectdir/android.sh
+
 cd $projectdir
 
 ttab emulator -avd device1
