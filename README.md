@@ -5,6 +5,11 @@ A quick batch file to set up a basic front-end project structure.
 
 ## Changelog
 
+_08/12/16_
+
+- Add a shell to generate APKs in React Native recipe
+- Update default build.gradle in React Native recipe
+
 _07/12/16_
 
 - Add Android launch shell in React Native recipe
