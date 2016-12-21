@@ -5,6 +5,10 @@ A quick batch file to set up a basic front-end project structure.
 
 ## Changelog
 
+_21/12/16_
+
+- Added canvas game recipe§
+
 _08/12/16_
 
 - Add a shell to generate APKs in React Native recipe
