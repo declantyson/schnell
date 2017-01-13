@@ -1,22 +1,21 @@
-var http = require('http'),
-    ejs = require('ejs'),
-    fs = require('fs'),
-    express = require('express'),
-    app = express();
+const package = require('./package.json'),
+      http = require('http'),
+      ejs = require('ejs'),
+      fs = require('fs'),
+      express = require('express'),
+      app = express();
 
-
-app.use("/_css", express.static('app/_css'));
-app.use("/_data", express.static('app/_data'));
-app.use("/_libs", express.static('app/_libs'));
-app.use("/_scripts", express.static('app/_scripts'));
+app.use("/css", express.static('css'));
+app.use("/data", express.static('data'));
+app.use("/scripts", express.static('scripts'));
 
 app.get('/', function(req,res) {
     res.writeHead(200, {'Content-Type': 'text/html'});
-    fs.readFile('app/index.ejs', 'utf-8', function (err, content) {
+    fs.readFile('views/index.ejs', 'utf-8', function (err, content) {
         if (err) {
             throw err;
         }
-        var renderedHtml = ejs.render(content);
+        let renderedHtml = ejs.render(content, { package: package });
         res.end(renderedHtml);
     });
 });

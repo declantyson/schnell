@@ -1,25 +1,16 @@
 module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
-		uglify: {
-			options: {
-				banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-			},
-			build: {
-				src: ['app/_scripts/src/*.js', '!**/*.min.js'],
-				dest: 'app/_scripts/script.min.js'
-			}
-		},
 		watch : {
 			scripts: {
-				files: ['app/_scripts/src/*.js', '!**/*.min.js'],
-				tasks: ['jshint', 'jasmine', 'uglify'],
+				files: ['scripts/src/*.js', '!**/*.min.js'],
+				tasks: ['jshint', 'babel', 'browserify'],
 				options: {
 
 				}
 			},
 			styles : {
-				files: ['app/_css/src/*.scss'],
+				files: ['css/src/*.scss'],
 				tasks: ['sass', 'cssmin'],
 				options: {
 
@@ -32,7 +23,7 @@ module.exports = function(grunt) {
 
 				},
 				files : {
-					'app/_css/styles.css': 'app/_css/src/*.scss'
+					'css/styles.css': 'css/src/*.scss'
 				}
 			}
 		},
@@ -43,27 +34,80 @@ module.exports = function(grunt) {
 			target: {
 				files : [{
 					expand: true,
-					cwd: 'app/_css',
+					cwd: 'css',
 					src: ['*.css', '!*.min.css'],
-					dest: 'app/_css',
+					dest: 'css',
 					ext: '.min.css'
 				}]
 			}
 		},
 		jshint: {
 			all: [
-				'Gruntfile.js',
-				'app/_scripts/src/*.js',
-				'app/_tests/*.js',
-				'!app/_scripts/*.min.js'
+				'scripts/src/*.js',
+				'tests/*.js',
 			]
 		},
 		jasmine : {
-			src : 'app/_scripts/*.js',
+			src : 'scripts/*.js',
 			options : {
-				specs : 'app/_tests/*.js'
+				specs : 'tests/*.js'
 			}
-		}
+		},
+		babel: {
+            options: {
+                sourceMap: true,
+                presets: ['es2015']
+            },
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd:  'scripts/src/',
+                    src: ['*.js'],
+                    dest: 'scripts/src/babel/',
+                    ext: '.js'
+                }]
+            }
+        },
+        browserify: {
+            dist: {
+                options: {
+                    banner: '/* \n' +
+                    '  * \n' +
+                    '  *  <%= pkg.name %> \n' +
+                    '  *  <%= pkg.author %> \n' +
+                    '  *  v<%= pkg.version %> \n' +
+                    '  *  <%= grunt.template.today("dd/mm/yyyy") %> \n' +
+                    '  * \n' +
+                    '  */' +
+                    '\n\n',
+                    transform: [["babelify"]],
+                    browserifyOptions: {
+                        standalone: '<%= pkg.name %>'
+                    }
+                },
+                files: {
+                    "scripts/<%= pkg.name %>.js": "scripts/src/babel/*.js"
+                }
+            }
+        },
+        uglify: {
+            options: {
+                banner: '/* \n' +
+                '  * \n' +
+                '  *  <%= pkg.name %> \n' +
+                '  *  <%= pkg.author %> \n' +
+                '  *  v<%= pkg.version %> \n' +
+                '  *  <%= grunt.template.today("dd/mm/yyyy") %> \n' +
+                '  * \n' +
+                '  */' +
+                '\n\n',
+                mangle: true
+            },
+            build: {
+                src: ['scripts/*.js', '!scripts/src/*.js', '!scripts/lib/*.js', '!scripts/babel/*.js'],
+                dest: 'scripts/<%= pkg.name %>.min.js'
+            }
+        }
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -72,7 +116,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-jasmine');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-babel');
+    grunt.loadNpmTasks('grunt-browserify');
 	grunt.loadNpmTasks('grunt-notify');
 	grunt.registerTask('default', ['watch']);
-
+	grunt.registerTask('init', ['sass', 'cssmin', 'uglify']);
 };

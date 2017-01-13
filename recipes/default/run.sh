@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-grunt sass
-grunt cssmin
-grunt uglify
+grunt init
 ttab grunt --force
 ttab npm start
