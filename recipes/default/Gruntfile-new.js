@@ -1,59 +1,18 @@
 module.exports = function(grunt) {
-	grunt.initConfig({
-		pkg: grunt.file.readJSON('package.json'),
-		watch : {
-			scripts: {
-				files: ['scripts/src/*.js', '!**/*.min.js'],
-				tasks: ['jshint', 'babel', 'browserify'],
-				options: {
-
-				}
-			},
-			styles : {
-				files: ['css/src/*.scss'],
-				tasks: ['sass', 'cssmin'],
-				options: {
-
-				}
-			}
-		},
-		sass : {
-			development: {
-				options : {
-
-				},
-				files : {
-					'css/styles.css': 'css/src/*.scss'
-				}
-			}
-		},
-		cssmin : {
-			options : {
-
-			},
-			target: {
-				files : [{
-					expand: true,
-					cwd: 'css',
-					src: ['*.css', '!*.min.css'],
-					dest: 'css',
-					ext: '.min.css'
-				}]
-			}
-		},
-		jshint: {
-			all: [
-				'scripts/src/*.js',
-				'tests/*.js',
-			]
-		},
-		jasmine : {
-			src : 'scripts/*.js',
-			options : {
-				specs : 'tests/*.js'
-			}
-		},
-		babel: {
+    // Project configuration.
+    grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
+        watch: {
+            babel: {
+                files: ['src/*.js'],
+                tasks: ['babel', 'browserify']
+            },
+            uglify: {
+                files: ['dist/*.js', '!dist/*.min.js'],
+                tasks: ['uglify']
+            }
+        },
+        babel: {
             options: {
                 sourceMap: true,
                 presets: ['es2015']
@@ -61,9 +20,9 @@ module.exports = function(grunt) {
             dist: {
                 files: [{
                     expand: true,
-                    cwd:  'scripts/src/',
+                    cwd:  'src/',
                     src: ['*.js'],
-                    dest: 'scripts/src/babel/',
+                    dest: 'src/babel/',
                     ext: '.js'
                 }]
             }
@@ -86,7 +45,7 @@ module.exports = function(grunt) {
                     }
                 },
                 files: {
-                    "scripts/<%= pkg.name %>.js": "scripts/src/babel/*.js"
+                    "dist/<%= pkg.name %>.js": "src/babel/*.js"
                 }
             }
         },
@@ -104,21 +63,18 @@ module.exports = function(grunt) {
                 mangle: true
             },
             build: {
-                src: ['scripts/*.js', '!scripts/src/*.js', '!scripts/lib/*.js', '!scripts/babel/*.js'],
-                dest: 'scripts/<%= pkg.name %>.min.js'
+                src: ['dist/*.js', '!dist/*.min.js'],
+                dest: 'dist/<%= pkg.name %>.min.js'
             }
         }
-	});
+    });
 
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-sass');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-contrib-jasmine');
-	grunt.loadNpmTasks('grunt-contrib-jshint');
+    // Plugins
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-babel');
     grunt.loadNpmTasks('grunt-browserify');
-	grunt.loadNpmTasks('grunt-notify');
-	grunt.registerTask('default', ['watch']);
-	grunt.registerTask('init', ['sass', 'cssmin', 'uglify']);
+
+    // Default task(s).
+    grunt.registerTask('default', ['watch']);
 };
