@@ -5,9 +5,14 @@ A quick batch file to set up a basic front-end project structure.
 
 ## Changelog
 
+_13/01/17_
+
+- Change the default recipe to be ES6 compatible
+- Keep old recipe as "legacy"
+
 _21/12/16_
 
-- Added canvas game recipe§
+- Added canvas game recipe
 
 _08/12/16_
 
