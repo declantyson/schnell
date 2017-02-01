@@ -51,7 +51,7 @@ projectdir=$prefix$project
 recipedir=$base/$recipe
 
 mkdir $projectdir
-bash $base/$recipe/install.sh $projectdir $recipedir
+bash $base/$recipe/install.sh $projectdir $recipedir $project
 
 cd $projectdir
 bash run.sh
