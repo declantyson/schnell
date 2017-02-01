@@ -11,11 +11,12 @@ _01/02/17_
 
 _13/01/17_
 
-- Made the original recipe ES6-friendly
+- Change the default recipe to be ES6 compatible
+- Keep old recipe as "legacy"
 
 _21/12/16_
 
-- Added canvas game recipe§
+- Added canvas game recipe
 
 _08/12/16_
 
