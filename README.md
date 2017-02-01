@@ -5,6 +5,10 @@ A quick batch file to set up a basic front-end project structure.
 
 ## Changelog
 
+_01/02/17_
+
+- Added a JS library recipe
+
 _13/01/17_
 
 - Change the default recipe to be ES6 compatible
