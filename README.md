@@ -5,6 +5,14 @@ A quick batch file to set up a basic front-end project structure.
 
 ## Changelog
 
+_01/02/17_
+
+- Added a JS library recipe
+
+_13/01/17_
+
+- Made the original recipe ES6-friendly
+
 _21/12/16_
 
 - Added canvas game recipe§
