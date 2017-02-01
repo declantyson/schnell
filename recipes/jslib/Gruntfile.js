@@ -4,11 +4,11 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         watch: {
             babel: {
-                files: ['src/*.js'],
+                files: ['src/*.js', 'package.json'],
                 tasks: ['babel', 'browserify']
             },
             uglify: {
-                files: ['dist/*.js', '!dist/*.min.js', 'package.json'],
+                files: ['dist/*.js', '!dist/*.min.js'],
                 tasks: ['uglify']
             }
         },
