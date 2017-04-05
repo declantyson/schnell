@@ -33,7 +33,9 @@ while test $# -gt 0; do
     esac
 done
 
-echo -n 'Choose recipe:'
+echo -n 'Recipe options:'
+printf "\n$(ls $base)\n\n"
+echo -n 'Use recipe:'
 read recipe
 
 if [ ! -d $base$recipe ]; then

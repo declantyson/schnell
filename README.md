@@ -5,6 +5,10 @@ A quick batch file to set up a basic front-end project structure.
 
 ## Changelog
 
+_05/04/17_
+
+- Output recipe list in new-project.sh
+
 _01/02/17_
 
 - Added a JS library recipe
