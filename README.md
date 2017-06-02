@@ -5,6 +5,11 @@ A quick batch file to set up a basic front-end project structure.
 
 ## Changelog
 
+_02/06/17_
+
+- Add mocha chai test template to React recipe
+- Add standalone deploy script to React recipe
+
 _05/04/17_
 
 - Output recipe list in new-project.sh

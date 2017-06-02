@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    <title>View test</title>
+    <link rel="stylesheet" type="text/css" href="____root____/css/styles.css">
+</head>
+<body>
+<nav></nav>
+<div id="content">
+
+</div>
+<script type="text/javascript" src="____root____/js/jquery.min.js"></script>
+<script type="text/javascript" src="____root____/js/react.min.js"></script>
+<script type="text/javascript" src="____root____/js/react-dom.min.js"></script>
+<script type="text/javascript" src="____root____/js/browser.min.js"></script>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbm1g5HROzGmIplJHfAh4uQywy365iImk"></script>
+
+<script type="text/javascript" src="____root____/js/views.js"></script>
+
+<script type="text/javascript">
+    $.ajax({
+        url	: "____root________url____"
+    }).done(function (views) {
+        renderViews(views);
+    });
+</script>
+</body>
+</html>

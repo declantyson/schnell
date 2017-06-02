@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>View test</title>
-	<link rel="stylesheet" type="text/css" href="views/styles.css">
+	<link rel="stylesheet" type="text/css" href="views/compiled/styles.css">
 </head>
 <body>
 	<div id="content">
@@ -13,19 +13,11 @@
 	<script type="text/javascript" src="libs/react-dom.min.js"></script>
 	<script type="text/javascript" src="libs/browser.min.js"></script>
 
-	<script type="text/javascript" src="scripts/renderer.js"></script>
-	<script type="text/javascript" src="views/test-view.js"></script>
+	<script type="text/javascript" src="renderer/renderer.js"></script>
+	<script type="text/javascript" src="views/compiled/test-view.js"></script>
 
 	<script type="text/javascript">
-		var views = [{
-			"type" : "TestView",
-			"data" : {
-				"testItems" : [
-					{ "text" : "Test Item A"},
-					{ "text" : "Test Item B"},
-				],
-			}
-		}];
+        var views = <%- data %>;
 
 		renderViews(views);
 	</script>
