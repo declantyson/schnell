@@ -1,17 +1,17 @@
 /*
  *
  *	Renderer
- *	v0.0.1
- *	04/11/2016
+ *	v0.1.0
+ *	22/06/2016
  *  
  */ 
 
-var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-var assetFolder = "/img";
-var mountedComponents = 0;
-var defaultPollInterval = 5000;
-var scrollIndex = 1;
-var fullScreenComponents = false;
+var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight,
+	assetFolder = "/img",
+	mountedComponents = 0,
+	defaultPollInterval = 5000,
+	scrollIndex = 1,
+	fullScreenComponents = false;
 
 function setAssetFolder(dir) {
     assetFolder = dir;
@@ -23,9 +23,10 @@ function renderViews(views) {
 	for(var i = 0; i < views.length; i++) {
 		var view = views[i],
 			componentType = view.type,
+			api = view.api,
 			data = view.data,
 			pollInterval = view.pollInterval || defaultPollInterval,
-			el = React.createElement(window[componentType], { data: data, pollInterval: pollInterval }),
+			el = React.createElement(window[componentType], { data: data, pollInterval: pollInterval, api: api }),
 			wrapper = document.createElement('div');
 
 		wrapper.id = generateId();

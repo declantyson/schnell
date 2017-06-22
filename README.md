@@ -5,6 +5,12 @@ A quick batch file to set up a basic front-end project structure.
 
 ## Changelog
 
+_22/06/17_
+
+- __WIP__ Remove jQuery entirely from React recipe
+    - _TODO: Add promises polyfill_
+    - _TODO: Update standalone deploy_
+
 _02/06/17_
 
 - Add mocha chai test template to React recipe

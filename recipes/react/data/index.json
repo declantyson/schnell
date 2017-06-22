@@ -1,5 +1,6 @@
 [{
   "type" : "TestView",
+  "api"  : "/views/src/test-view/schema.json",
   "data" : {
     "testItems" : [
       { "text" : "Test Item A"},

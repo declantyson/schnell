@@ -1,15 +1,16 @@
 /*
  *  React Schnell / Local Server
  *  Declan Tyson
- *  v0.2.0
- *  02/06/2017
+ *  v0.2.1
+ *  22/06/2017
  */
 
 const http = require('http'),
     ejs = require('ejs'),
     fs = require('fs'),
     express = require('express'),
-    app = express();
+    app = express(),
+    port = 3000;
 
 app.use("/renderer", express.static('renderer'));
 app.use("/views", express.static('views'));
@@ -83,6 +84,6 @@ app.get('/:file', (req,res) => {
     });
 });
 
-http.createServer(app).listen(3000);
+http.createServer(app).listen(port);
 
-console.log("App running on 3000");
+console.log(`App running on ${port}`);

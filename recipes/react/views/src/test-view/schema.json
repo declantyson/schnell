@@ -1,9 +1,10 @@
-[{
-	"type" : "TestView",
-	"data" : {
-		"testItems" : [
-			{ "text" : "Test Item A"},
-			{ "text" : "Test Item B"},
-		],
-	}
-}]
+{
+	"testItems": [
+		{
+			"text": "Test item A"
+		},
+		{
+			"text": "Test item B"
+		}
+	]
+}
