@@ -1,12 +1,13 @@
 /*
  *  React Schnell / Tests
  *  Declan Tyson
- *  v0.0.1
- *  02/06/2017
+ *  v0.1.0
+ *  27/06/2017
  */
 
 var testViewSchema = [{
     "type" : "TestView",
+    "api"  : "",
     "data" : {
         "testItems" : [
             { "text" : "Test Item A"},
@@ -19,10 +20,9 @@ describe('TestView', function() {
 
     it('should have two children', function () {
         renderViews(testViewSchema);
-        var $component  = $('.component.testview'),
-            testItem    = $component.find('p');
+        var testItem  = document.querySelectorAll('.component.testview p');
 
-        assert(testItem.length === 2, "test items not found");
+        assert(testItem.length === 2, `expected 2 test items, instead ${testItem.length}`);
     });
 
 });
