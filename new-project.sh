@@ -44,7 +44,7 @@ if [ ! -d $base$recipe ]; then
 fi
 
 if [ -z $recipe ]; then
-    recipe="default"
+    recipe="react"
 fi
 
 echo "Creating new project '$project'"

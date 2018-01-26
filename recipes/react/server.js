@@ -1,8 +1,8 @@
 /*
  *  React Schnell / Local Server
  *  Declan Tyson
- *  v0.2.1
- *  22/06/2017
+ *  v0.3.0
+ *  26/01/2018
  */
 
 const http = require('http'),
@@ -10,17 +10,24 @@ const http = require('http'),
     fs = require('fs'),
     express = require('express'),
     app = express(),
-    port = 3000;
+    port = 3000,
+    webpack = require('webpack'),
+    webpackDevMiddleware = require('webpack-dev-middleware'),
+    webpackHotMiddleware = require('webpack-hot-middleware'),
+    config = require('./webpack.config.js'),
+    compiler = webpack(config);
 
-app.use("/renderer", express.static('renderer'));
-app.use("/views", express.static('views'));
-app.use("/data", express.static('data'));
-app.use("/libs", express.static('libs'));
 app.use("/node_modules", express.static('node_modules'));
-app.use("/fonts", express.static('fonts'));
-app.use("/img", express.static('media'));
-app.use("/media", express.static('media'));
+app.use("/data", express.static('data'));
 app.use("/tests", express.static('tests'));
+app.use("/views", express.static('views'));
+
+app.use(webpackDevMiddleware(compiler, {
+    publicPath: config.output.publicPath,
+    hot: true,
+    host: 'localhost'
+}));
+app.use(webpackHotMiddleware(compiler));
 
 app.get('/', (req,res) => {
     res.writeHead(200, {'Content-Type': 'text/html'});

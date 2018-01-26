@@ -1,27 +1,31 @@
 /*
  *
  *	Renderer
- *	v0.1.0
- *	22/06/2016
+ *	v0.3.0
+ *	26/01/2018
  *  
- */ 
+ */
 
-var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight,
-	assetFolder = "/img",
-	mountedComponents = 0,
-	defaultPollInterval = 5000,
-	scrollIndex = 1,
-	fullScreenComponents = false;
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './renderer.scss';
+import '../views/test-view/test-view.jsx';
+import '../views/test-item/test-item.jsx';
 
-function setAssetFolder(dir) {
-    assetFolder = dir;
-}
+const viewportHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight,
+      fullScreenComponents = false,
+	  defaultPollInterval = 5000;
 
-function renderViews(views) {
-	var content = document.getElementById("content");
+window.scrollIndex = 1;
+window.mountedComponents = 0;
+window.assetFolder = "/img";
+
+window.renderViews = (views,  clear = false) => {
+	let content = document.getElementById("content");
+    if(clear) content.innerHTML = '';
 
 	for(var i = 0; i < views.length; i++) {
-		var view = views[i],
+		let view = views[i],
 			componentType = view.type,
 			api = view.api,
 			data = view.data,
@@ -37,26 +41,33 @@ function renderViews(views) {
 	}
 
 	if(fullScreenComponents) {
-		var components = document.getElementsByClassName('component');
-		for (var c = 0; c < components.length; c++) {
-			components[c].style.height = windowHeight + "px";
+		let components = document.getElementsByClassName('component');
+		for (let c = 0; c < components.length; c++) {
+			components[c].style.height = viewportHeight + "px";
 		}
 	}
-}
+};
 
-function renderComplete() {
+window.renderComplete = () => {
 	document.body.className = "ready";
 	if(fullScreenComponents) {
 		document.body.className += " fullscreencomponents"
 	}
-}
+};
 
-function generateId() {
-    var id = "";
-    var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+window.generateId = () => {
+    let id = "",
+        characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-    for( var i=0; i < 16; i++ )
+    for(let i = 0; i < 16; i++) {
         id += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
 
     return id;
+};
+
+if(typeof views !== 'undefined') renderViews(views, true);
+
+if(module.hot) {
+	module.hot.accept();
 }

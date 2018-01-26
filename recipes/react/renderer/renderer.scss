@@ -1,8 +1,8 @@
 /* 
 *
 *	Renderer
-*	v0.0.1
-*	04/11/2016
+*	v0.3.0
+*	26/01/2018
 *
 */
 
@@ -42,7 +42,7 @@
 /* Defaults */
 
 html, body {
-	margin: 0;
+	margin: 10px;
 	font-family: 'HelveticaNeue-Light', sans-serif;
 	&.fullscreencomponents {
 		overflow: hidden;

@@ -7,6 +7,6 @@ cp -r $recipedir/ $projectdir/
 
 cd $projectdir
 npm init --yes
-npm install grunt  grunt-contrib-concat  grunt-contrib-sass  grunt-contrib-uglify  grunt-contrib-cssmin  grunt-contrib-watch  grunt-contrib-connect  grunt-contrib-jshint  grunt-notify  git+https://github.com/declantyson/grunt-reactify --save-dev
+npm install babel-core babel-loader babel-preset-es2015 babel-preset-react react react-dom node-sass sass-loader css-loader style-loader webpack webpack-dev-middleware webpack-hot-middleware --save-dev
 
-npm install body-parser  ejs  express  fs  fs-extra  fs-path  mocha  chai  request --save-dev
+npm install body-parser  ejs  express  fs  fs-extra  fs-path  mocha  chai  request --save

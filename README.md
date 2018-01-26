@@ -5,6 +5,12 @@ A quick batch file to set up a basic front-end project structure.
 
 ## Changelog
 
+_26/01/18_
+
+- Replace grunt with webpack in React recipe
+- General clean up of React recipe
+- Make React the default recipe, old default is now "classic"
+
 _22/06/17_
 
 - __WIP__ Remove jQuery entirely from React recipe

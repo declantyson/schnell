@@ -1,5 +1,7 @@
 node_modules/
 .idea/
 .sass-cache/
+dist/
 .DS_Store
 *.css.map
+npm-debug.log
