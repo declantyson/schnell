@@ -5,6 +5,10 @@ A quick batch file to set up a basic front-end project structure.
 
 ## Changelog
 
+_09/02/18_
+
+- Add Paradise recipe
+
 _26/01/18_
 
 - Replace grunt with webpack in React recipe
