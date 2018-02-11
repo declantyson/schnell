@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Paradise</title>
+	<link href="styles.css" rel="stylesheet"/>
 </head>
 <body>
 	<canvas id="world" style="display: none;"></canvas>
@@ -9,10 +10,9 @@
 
 	</div>
 
-	<button onclick="window.startGame()">Start</button>
-	<button onclick="window.debug = true; window.startGame('Islands', ['Zenith', 'Quazar', 'Jill', 'John']);">Start with test</button>
-
 	<script type="text/javascript" src="/game/game.js"></script>
-
+	<script>
+		window.startGame();
+	</script>
 </body>
 </html>

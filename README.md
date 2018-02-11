@@ -5,6 +5,10 @@ A quick batch file to set up a basic front-end project structure.
 
 ## Changelog
 
+_11/02/18_
+
+- Add webpack and electron to paradise recipe
+
 _09/02/18_
 
 - Add Paradise recipe

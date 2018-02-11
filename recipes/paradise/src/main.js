@@ -7,7 +7,7 @@
  *
  */
 
-import { Util, startingMaps, chooseStartingMap, choosePeople, Player, WorldMap, StartGame } from 'paradise';
+import { Util, startingMaps, chooseStartingMap, choosePeople, Player, WorldMap, StartGame } from 'paradise-engine';
 
 window.startGame = (locale, people) => {
     Util.clearLog();

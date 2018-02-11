@@ -1,0 +1,24 @@
+{
+  "name": "codename",
+  "version": "0.0.1",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "Declan Tyson",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "ejs": "^2.5.7",
+    "electron": "^1.8.2",
+    "express": "^4.16.2",
+    "fs": "0.0.1-security",
+    "paradise-engine": "git+https://git@github.com/declantyson/paradise.git",
+    "webpack": "^3.11.0"
+  }
+}
